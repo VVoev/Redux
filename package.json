@@ -1,8 +1,8 @@
 {
     "name": "pluralsight-redux-starter",
     "version": "1.0.0",
-    "description": "Starter kit for React and Redux Pluralsight course by Cory House",
-    "author": "Cory House",
+    "description": "React and Redux",
+    "author": "Vlado",
     "license": "MIT",
     "scripts": {
         "prestart": "babel-node tools/startMessage.js",
