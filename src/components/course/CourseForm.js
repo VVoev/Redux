@@ -8,13 +8,14 @@ const CourseForm = ({ course, allAuthors, onSave, onChange, loading, errors, sav
       <h1>Manage Course</h1>
       <TextInput
         name="title"
-        label="title"
+        label="Title"
         value={course.title}
         onChange={onChange}
         error={errors.title}
       />
 
       <br />
+      <h5>Author</h5>
       <SelectInput
         name="authorId"
         label="authorId"
