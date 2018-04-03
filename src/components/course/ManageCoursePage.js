@@ -5,6 +5,8 @@ import * as courseActions from '../../actions/courseActions';
 import CourseForm from './CourseForm';
 import toastr from 'toastr';
 
+import { authorsFormatedForDropDown } from '../../selectors/selectors';
+
 
 
 export class ManageCoursePage extends Component {
@@ -48,7 +50,7 @@ export class ManageCoursePage extends Component {
 
   saveCourse(event) {
     event.preventDefault();
-    if (!this.courseFormIsValid()) {
+    if (this.courseFormIsValid()) {
       return;
     }
     this.setState({ saving: true });
@@ -96,15 +98,9 @@ function mapStateToProps(state, ownProps) {
   if (courseId) {
     course = getCourseById(state.courses, courseId);
   }
-  const authorsFormatedForDropDown = state.authors.map(author => {
-    return {
-      value: author.id,
-      text: author.firstName + ' ' + author.lastName
-    };
-  });
   return {
     course: course,
-    authors: authorsFormatedForDropDown
+    authors: authorsFormatedForDropDown(state.authors)
   };
 }
 
